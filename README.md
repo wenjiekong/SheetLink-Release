@@ -5,8 +5,6 @@ SheetLink 是 Revit 2024 与 Excel 的参数双向同步插件：选择类别和
 
 当前版本：**0.1.0**
 
-源码仓库：<https://github.com/wenjiekong/SheetLink>
-
 ## 下载
 
 - [SheetLink_Setup_0.1.0.exe](SheetLink_Setup_0.1.0.exe) — 安装程序（约 4.4 MB）
