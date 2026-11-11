@@ -1,0 +1,47 @@
+﻿SheetLink 0.1.0
+Revit 2024 与 Excel 参数双向同步
+
+一、这个插件做什么
+在 Revit 里选择类别和参数，导出成 Excel；在 Excel 里改完再导回。
+写入前会先列出所有计划改动，确认后才真正改模型；写入结束会给出
+"已修改 / 未变化"清单。
+
+二、开始使用
+1. 启动 Revit 2024，打开一个项目模型（不支持族文件）。
+2. 在功能区顶部找到 "SheetLink" 选项卡，点击 "Excel 同步"。
+3. 勾选类别和参数，先点 "预览表格" 检查数据，再导出 Excel。
+4. 在 Excel 的 "数据" 工作表里修改，保存。
+5. 回到插件，选择这个 Excel 导入；确认预览无误后写入模型。
+
+三、第一次加载的提示
+Revit 可能提示 "未签名的插件"。请选择 "始终载入"（Always Load），
+之后启动 Revit 就不会再问。
+
+四、注意事项
+- 只支持 Revit 2024（64 位），其他 Revit 版本不会加载。
+- 安装或升级前请先关闭 Revit。
+- 界面依赖 Microsoft Edge WebView2 Runtime；Windows 11 通常自带。
+  如果插件提示启动失败，请安装 WebView2 Runtime 后重试。
+- 写入前请先保存模型，或至少在模型副本上操作。
+- 写入过程中点 "取消" 会整批回滚，不会留下改了一半的模型。
+
+五、文件位置
+插件目录：
+  %APPDATA%\Autodesk\Revit\Addins\2024\SheetLink
+清单文件：
+  %APPDATA%\Autodesk\Revit\Addins\2024\SheetLink.addin
+日志：
+  %LOCALAPPDATA%\SheetLink\logs
+
+六、卸载
+先关闭 Revit，然后打开：
+   Windows 设置 > 应用 > 已安装的应用 > SheetLink > 卸载
+
+七、常见问题
+- 功能区看不到 SheetLink：
+  确认上面的 SheetLink.addin 在 Addins\2024 根目录，然后完全退出并
+  重新启动 Revit。
+- 点按钮后窗口打不开或提示 WebView2：
+  安装 Microsoft Edge WebView2 Runtime。
+- 其他问题：
+  把 %LOCALAPPDATA%\SheetLink\logs 里最新的日志发给维护人。
